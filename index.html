@@ -30,21 +30,21 @@
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#gallery">Gallery</a>
-                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shermanpour'});return false;" class="btn btn-outline">Book Now</a>
+                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shermanpourco/30min'});return false;" class="btn btn-outline">Book Now</a>
             </div>
-            <div class="mobile-menu-btn">
+            <div class="mobile-menu-btn" aria-label="Toggle navigation menu" role="button" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
     <!-- MOBILE DROPDOWN -->
-    <div class="nav-dropdown">
+    <div class="nav-dropdown" aria-hidden="true">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
-        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shermanpour'});return false;">Book Now</a>
+        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shermanpourco/30min'});return false;">Book Now</a>
     </div>
 
     <!-- HERO SECTION -->
@@ -52,10 +52,10 @@
         <div class="container">
             <div class="hero-content">
                 <span class="subtitle">CENTRAL ILLINOIS</span>
-                <h1 class="text-white">Turning Ordinary Events <br> Into Memorable Moments</h1>
+                <h1>Turning Ordinary Events <br> Into Memorable Moments</h1>
                 <p>Veteran-Owned • BASSET Certified • Professionally Insured</p>
                 <div class="hero-btns">
-                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shermanpour'});return false;" class="btn btn-silver">Reserve Your Date</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shermanpourco/30min'});return false;" class="btn btn-silver">Book Consultation</a>
                     <a href="#gallery" class="btn btn-outline" style="margin-left: 15px;">View Our Work</a>
                 </div>
             </div>
@@ -88,7 +88,7 @@
             <div class="section-header">
                 <span class="subtitle text-silver">Beyond The Pour</span>
                 <h2>Our Services</h2>
-                <p style="max-width: 700px; margin: 20px auto; color: var(--text-gray);">Customizable bartending packages designed to keep the drinks flowing so you can focus on making memories.</p>
+                <p style="max-width: 700px; margin: 20px auto; color: var(--text-dim);">Customizable bartending packages designed to keep the drinks flowing so you can focus on making memories.</p>
             </div>
             <div class="specialties-grid">
                 <div class="spec-card">
@@ -116,7 +116,7 @@
     </section>
 
     <!-- ADD-ONS SECTION -->
-    <section class="section-padding" style="background: var(--bg-black); border-top: 1px solid #111;">
+    <section class="section-padding" style="background: var(--bg-white); border-top: 1px solid var(--border-light);">
         <div class="container">
             <div class="section-header">
                 <span class="subtitle text-silver">Elevate Your Experience</span>
@@ -205,31 +205,31 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form id="booking-form">
+                    <form id="booking-form" action="#" method="POST">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" placeholder="Your Name" required>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" placeholder="Your Email" required>
-                            </div>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
-                            <div class="form-group">
-                                <label>Event Date</label>
-                                <input type="date">
-                            </div>
-                            <div class="form-group">
-                                <label>Event Location</label>
-                                <input type="text" placeholder="City/Venue">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
                             </div>
                         </div>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
                             <div class="form-group">
-                                <label>Event Type</label>
-                                <select>
+                                <label for="event-date">Event Date</label>
+                                <input type="date" id="event-date" name="event-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Event Location</label>
+                                <input type="text" id="location" name="location" placeholder="City/Venue">
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                            <div class="form-group">
+                                <label for="event-type">Event Type</label>
+                                <select id="event-type" name="event-type">
                                     <option value="" disabled selected>Select Event Type</option>
                                     <option>Wedding</option>
                                     <option>Corporate Event</option>
@@ -239,13 +239,13 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Guest Count</label>
-                                <input type="number" placeholder="Estimated Guests">
+                                <label for="guest-count">Guest Count</label>
+                                <input type="number" id="guest-count" name="guest-count" placeholder="Estimated Guests">
                             </div>
                         </div>
                         <div class="form-group" style="margin-top: 20px;">
-                            <label>Service Needed</label>
-                            <select>
+                            <label for="service">Service Needed</label>
+                            <select id="service" name="service">
                                 <option value="" disabled selected>Select Service Needed</option>
                                 <option>Beer/Wine Only</option>
                                 <option>Full Bar (Cocktails)</option>
@@ -253,8 +253,8 @@
                             </select>
                         </div>
                         <div class="form-group" style="margin-top: 20px;">
-                            <label>Message</label>
-                            <textarea rows="4" placeholder="Additional details..."></textarea>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Additional details..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-silver" style="margin-top: 20px; width: 100%;">Send Inquiry</button>
                     </form>
@@ -264,11 +264,11 @@
     </section>
 
     <!-- NEWSLETTER SECTION -->
-    <section class="section-padding" style="background: var(--card-bg); text-align: center;">
+    <section class="section-padding" style="background: var(--bg-light); text-align: center;">
         <div class="container">
             <span class="subtitle text-silver">Join Our Elite Circle</span>
             <h2>Enjoy 10% Off Your First Booking</h2>
-            <p style="color: var(--text-gray); margin-bottom: 30px;">Subscribe to our newsletter for exclusive insights and event tips.</p>
+            <p style="color: var(--text-dim); margin-bottom: 30px;">Subscribe to our newsletter for exclusive insights and event tips.</p>
             <form style="max-width: 500px; margin: 0 auto; display: flex; gap: 10px;">
                 <input type="email" placeholder="Your Email Address" style="flex: 1;" required>
                 <button type="submit" class="btn btn-silver">Subscribe</button>
@@ -287,7 +287,7 @@
                 <div class="spec-card" style="text-align: left; padding: 0; overflow: hidden;">
                     <img src="assets/WhatsApp Image 2026-06-14 at 23.30.47 (2).jpeg" style="width: 100%; height: 200px; object-fit: cover;">
                     <div style="padding: 30px;">
-                        <span style="font-size: 0.8rem; color: var(--silver);">May 9, 2026</span>
+                        <span style="font-size: 0.8rem; color: var(--accent);">May 9, 2026</span>
                         <h3 style="margin: 10px 0; font-size: 1.3rem;">Top 5 Tips for Hiring a Bartender for Your Event</h3>
                         <p style="font-size: 0.9rem; margin-bottom: 20px;">Hiring the right team can make or break your event experience...</p>
                         <a href="#" class="text-silver" style="font-weight: 600;">Continue Reading →</a>
@@ -332,7 +332,9 @@
         const mobileIcon = mobileBtn.querySelector('i');
         
         mobileBtn.addEventListener('click', () => {
-            navDropdown.classList.toggle('active');
+            const isActive = navDropdown.classList.toggle('active');
+            mobileBtn.setAttribute('aria-expanded', isActive);
+            navDropdown.setAttribute('aria-hidden', !isActive);
             mobileIcon.classList.toggle('fa-bars');
             mobileIcon.classList.toggle('fa-times');
         });
@@ -340,6 +342,8 @@
         dropdownLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navDropdown.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
+                navDropdown.setAttribute('aria-hidden', 'true');
                 mobileIcon.classList.add('fa-bars');
                 mobileIcon.classList.remove('fa-times');
             });
